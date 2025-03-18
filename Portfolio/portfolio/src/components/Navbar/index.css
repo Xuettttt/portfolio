@@ -1,0 +1,122 @@
+.navbar-original {
+  background-color: #201e2f !important;
+  transition: all 0.3s ease-in-out 0s !important;
+  box-shadow: 0px 20px 20px 0px rgba(9, 5, 29, 0.171) !important;
+  backdrop-filter: blur(10px) !important;
+}
+.navbar-scrolled {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 1050;
+  transition: all 0.3s ease-in-out !important;
+  padding: 0.5rem 2rem !important;
+  font-size: 1rem !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.switch-icon {
+  color: #ce5ff8;
+  font-size: 40px;
+}
+
+.nav-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/** icon fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-icon {
+  opacity: 1;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transform: translateY(0);
+  gap: 15px;
+  padding-left: 20px;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-icon:hover {
+  color: white;
+}
+
+@media (min-width: 768px) {
+
+  .nav-item {
+    margin-left: 35px;
+  }
+
+  .nav-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #ce5ff8;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-icon:hover::after {
+    transform: scaleX(1); 
+  }
+  .nav-icon:active,
+  .nav-icon:focus,
+  .navbar .nav-link.active {
+    color: #ce5ff8 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-icon {
+    opacity: 0;
+    transform: translateY(15px);
+    margin-bottom: 15px;
+  }
+
+  .nav-icon:hover {
+    color: #ce5ff8;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(1) .nav-icon {
+    animation: fadeInUp 0.5s ease-in-out 0.1s forwards;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(2) .nav-icon {
+    animation: fadeInUp 0.5s ease-in-out 0.7s forwards;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(3) .nav-icon {
+    animation: fadeInUp 0.5s ease-in-out 1.3s forwards;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(4) .nav-icon {
+    animation: fadeInUp 0.5s ease-in-out 2s forwards;
+  }
+}
