@@ -1,0 +1,34 @@
+.tech-icons-table {
+  justify-content: center;
+  padding-bottom: 50px;
+  margin-top: 30px;
+}
+
+.tech-icons {
+  font-size: 4.5rem !important;
+  color: white;
+  margin: 15px !important;
+  padding: 10px !important;
+  opacity: 0.93 !important;
+  border: 1.7px solid rgba(255, 255, 255) !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  border-radius: 5px !important;
+  display: table !important;
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  overflow: hidden !important;
+  transition: all 0.4s ease 0s !important;
+}
+
+.tech-icons:hover {
+  transform: scale(1.05) !important;
+  overflow: hidden !important;
+  border: 1.6px solid #ce5ff8 !important;
+}
+
+@media (max-width: 500px) {
+  .tech-icons {
+    /* font-size: 0.9rem !important; */
+    margin: 10px;
+  }
+}

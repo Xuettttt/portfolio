@@ -1,8 +1,172 @@
 .home {
+  position: relative;
   width: 100%;
   max-width: 100%;
-  margin-top: 70px;
+  margin-top: 100px;
   color: white;
   font-size: 100px;
-  height: 1500px;
+  display: flex;
+}
+
+.home .content-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+}
+
+.content-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: -15%;
+  left: 27%;
+  text-align: left;
+}
+
+.text-container {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+}
+
+.intro {
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+  max-width: 700px;
+  white-space: pre-wrap;
+}
+
+.cursor {
+  font-weight: bold;
+  font-size: 24px;
+  color: #ce5ff8;
+}
+
+.blink {
+  animation: blink-animation 0.8s infinite;
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.keywords {
+  color: #ce5ff8;
+  margin-top: 80px;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.DevIcons {
+  margin-top: 40px;
+  text-align: center;
+}
+.DevIcons img {
+  display: inline-block;
+  width: 70%;
+}
+
+
+@media (max-width: 990px) {
+  .content-1 {
+    position: static;
+    text-align: center;
+    align-items: center;
+  }
+
+  .text-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro {
+    margin-top: 20px;
+    text-align: center;
+    max-width: 400px;
+  }
+}
+
+.home .name {
+  color: #ce5ff8;
+  margin-left: 10px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 260px;
+  background: radial-gradient(circle, #ce5ff8, #190A32);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 80%;
+  width: 80px;
+  height: 80px;
+  background-image: url("../../Assets/arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(176deg);
+}
+
+#female-programmer {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../Assets/female-programmer.svg");
+}
+
+.wave {
+  padding-left: 10px;
+  animation-name: wave-animation;
+  animation-duration: 2.1s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.heading {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.purple {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #ce5ff8;
 }
