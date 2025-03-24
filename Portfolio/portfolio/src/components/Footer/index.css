@@ -1,0 +1,28 @@
+.footer {
+  background-color: #201e2f;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  bottom: 0 !important;
+  z-index: 1;
+}
+
+.footer-copywright {
+  color: white;
+  text-align: center;
+}
+
+.footer-copywright h3 {
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+.footer-copywright ul {
+  list-style: none;
+  display: flex;      
+  gap: 3rem;          
+  padding-left: 0;    
+  justify-content: center;
+}
+.footer-copyright li {
+  display: inline-block;
+}

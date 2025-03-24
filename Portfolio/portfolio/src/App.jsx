@@ -6,12 +6,12 @@ import Resume from './components/Resume';
 import Projects from './components/Projects';
 import Preload from './components/Preload';
 import Navbar from './components/Navbar';
-import "./style.css";
 import {BrowserRouter as Router,
     Routes, 
     Route, 
     Navigate
 } from "react-router-dom";
+import Footer from './components/Footer';
 
 function App() {
 
@@ -29,17 +29,15 @@ function App() {
       <Preload load = {load}/>
       <div className="App" id = {load ? "no-scroll" : "scroll"}>
         <Navbar />
-
-        {/**
-         * scroll to top on refresh
-         */}
-         
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/resume" element={<Resume />}/>
-          <Route path="/projects" element={<Projects />}/>
-          <Route path="*" element={<Navigate to = "/"/>}/>
-        </Routes>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/resume" element={<Resume />}/>
+            <Route path="/projects" element={<Projects />}/>
+            <Route path="*" element={<Navigate to = "/"/>}/>
+          </Routes>
+        </div>
+        <Footer />
       </div>
     </Router>
   )
