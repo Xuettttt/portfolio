@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Preahvihear&display=swap");
 
-body {
+html, body {
   font-family: "Preahvihear"  !important;
   margin: 0;
   padding-top: 56px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to left, #100e1a, rgb(20 15 35));
+  /* user-select: 0; */
 }
+/* 
+* {
+  box-sizing: border-box;
+} */

@@ -35,7 +35,10 @@ function Home() {
       <Container>
         <Row>
           <Col className="content-container">  
-            <div id="female-programmer" className="image-container"></div>
+          <div className="image-container">
+            <div id="female-programmer"></div>
+          </div>
+
 
             <div className="content-1">
               <div className="text-container">
