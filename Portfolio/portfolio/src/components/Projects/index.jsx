@@ -96,8 +96,34 @@ function Projects() {
 
   return (
     <div className="deck-container">
-      <h1>hhh</h1>
-      
+      {
+        props.map(({x, y, rot, scale}, i) => (
+          /**
+           * 控制卡片位置
+           */
+          <animated.div
+            key = {i}
+            className = "card-wrapper"
+            style = {
+              {
+                transform : interpolate([x,y], 
+                  (x,y) =>
+                  `translate3d(${x}px, ${y}px, 0)`
+                )
+              }
+            }
+          >
+            <animated.div
+              className = "card"
+              {...bind(i)}
+              style = {{
+                transform: interpolate([rot, scale], trans),
+                background: `url(${cards[i]})`
+              }}
+            />
+          </animated.div>
+        ))
+      }
     </div>
   );
 }
