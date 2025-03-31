@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Preahvihear&display=swap");
 
 body {
+  overscroll-behavior-y: contain;
   font-family: "Preahvihear"  !important;
   margin: 0;
+  height: 100%;
+  width: 100%;
+  user-select: none;
   padding-top: 56px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

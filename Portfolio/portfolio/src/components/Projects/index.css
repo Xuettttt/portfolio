@@ -1,32 +1,51 @@
 .deck-container {
-  background: lightblue;
-  overflow: hidden;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  position: fixed;
+  overflow: hidden;
+  position: relative;
+  background: transparent; /* 确保容器无背景干扰 */
 }
 
 .card-wrapper {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  will-change: transform;
-  display: flex;
+  top: 40%;
+  left: 50%;
+  width: 360px;
+  height: 640px;
+  margin-top: -225px;
+  margin-left: -150px;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  touch-action: none;
+  will-change: transform; /* 移除引号，否则无效 */
+}
+
+.card-wrapper::before {
+  content: "";
+  position: absolute;
+  top:50%;
+  left: 50%;
+  width: 400px;
+  height: 700px;
+  background: radial-gradient(circle, #ce5ff8, #190A32);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(90px);
 }
 
 .card {
-  background-color: white;
-  border: 2px solid red;
-  background-size: auto 85%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 45vh;
-  max-width: 300px;
-  height: 85vh;
-  will-change: transform;
+  position: relative;
+  width: 360px;
+  height: 640px;
+  background-color: white; /* 覆盖透明区域 */
   border-radius: 10px;
+  background-size: cover;
+  background-position: center;
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
-  0 10px 10px -10px rgba(50, 50, 73, 0.3);
+              0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  will-change: transform; /* 移除引号 */
+  pointer-events: auto; /* 仅卡片可交互 */
+  touch-action: none;
 }
