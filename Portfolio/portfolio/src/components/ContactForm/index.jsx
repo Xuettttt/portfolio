@@ -58,60 +58,72 @@ export default function ContactForm() {
   }
 
   return (
-    < form onSubmit={handleSubmit} >
-      <div>
-        <label htmlFor="name">name</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          maxLength={40}
-        />
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <h2>Get In Touch</h2>
+
+      <div className="form-grid">
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            maxLength={40}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="phone">Phone</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="Phone number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            maxLength={15}
+          />
+        </div>
+
+        <div className="form-group full-width">
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Email address"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            maxLength={200}
+          />
+        </div>
+
+        <div className="form-group full-width">
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Type your message here"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            maxLength={5000}
+            rows={5}
+          />
+        </div>
       </div>
-      <div>
-        <label htmlFor="phone">name</label>
-        <input
-          id="phone"
-          name="phone"
-          type="text"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-          maxLength={15}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          maxLength={200}
-        />
-      </div>
-      <div>
-        <label htmlFor="message">message</label>
-        <input
-          id="message"
-          name="message"
-          type="text"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          maxLength={5000}
-        />
-      </div>
+
       <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Submitting..." : "Send Message"}
+        {isSubmitting ? "Submitting..." : "Submit"}
       </button>
 
-      {status && <p>{status}</p>}
-    </form >
+      {status && <p className="form-status">{status}</p>}
+    </form>
   )
 }
