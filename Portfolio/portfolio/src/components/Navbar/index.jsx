@@ -6,7 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faBars, faFileLines, faTable, faXmark} from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faBars, faFileLines, faTable, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 
 function Navbar() {
@@ -27,23 +27,24 @@ function Navbar() {
   return (
     <NavBar
       fixed="top"
-      expanded = {expand}
+      expanded={expand}
       expand="md"
       className={navColor ? "navbar-original" : "navbar-scrolled"}
     >
       <Container>
         <NavBar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => {updateExpand(expand ? false : "expanded");
+          onClick={() => {
+            updateExpand(expand ? false : "expanded");
             updateNavColor(true);
           }}
         >
-          <FontAwesomeIcon icon={expand ? faXmark : faBars} className = "switch-icon" />
+          <FontAwesomeIcon icon={expand ? faXmark : faBars} className="switch-icon" />
         </NavBar.Toggle>
-        <NavBar.Collapse id = "responsive-navbar-nav" >
-          <Nav className = "ms-auto" defaultActiveKey = "#home">
+        <NavBar.Collapse id="responsive-navbar-nav" >
+          <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as = {Link} to = "/" onClick={() => {
+              <Nav.Link as={Link} to="/" onClick={() => {
                 updateExpand(false)
               }} className="nav-icon">
                 <FontAwesomeIcon icon={faHouse} />
@@ -51,7 +52,7 @@ function Navbar() {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link as = {Link} to = "/projects" onClick={()=> {
+              <Nav.Link as={Link} to="/projects" onClick={() => {
                 updateExpand(false)
               }} className="nav-icon">
                 <FontAwesomeIcon icon={faTable} />
@@ -59,11 +60,11 @@ function Navbar() {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link as = {Link} to = "/resume" onClick={()=> {
+              <Nav.Link as={Link} to="/contact" onClick={() => {
                 updateExpand(false)
               }} className="nav-icon">
                 <FontAwesomeIcon icon={faFileLines} />
-                Resume
+                Contact
               </Nav.Link>
             </Nav.Item>
           </Nav>

@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 .DS_Store
 .vercel
+.env
+.env.local
+.env.*.local
+.env*.local
